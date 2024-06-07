@@ -1,0 +1,18 @@
+---
+title: "US Counties Populations"
+author: "SriRitvik Yellamilli"
+format: html
+execute: 
+  echo: false
+---
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
+```{r}
+#| warning: false
+connectedness |> ggplot(aes(x = population, y = connectedness)) + geom_point() + geom_smooth(method = "lm") + scale_x_log10(labels = scales::comma_format()) + labs(title = "US County Populations vs. Economic Connectedness", subtitle = "Population size does not matter to EC", x = "Population", y = "Economic Connectedness")
+```
+
+
